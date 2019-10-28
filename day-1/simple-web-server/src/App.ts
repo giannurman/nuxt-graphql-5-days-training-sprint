@@ -15,6 +15,11 @@ class App {
         message: 'Hello World!'
       })
     })
+    router.get('/custom', (req, res) => {
+      res.json({
+        message: 'Hello Gian Nurman Lestari!'
+      })
+    })
     this.express.use('/', router)
   }
 }
