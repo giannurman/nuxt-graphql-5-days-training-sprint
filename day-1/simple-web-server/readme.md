@@ -23,3 +23,6 @@ npm run lint
 ```bash
 docker build .
 ```
+
+### Reference
+- https://stackify.com/docker-build-a-beginners-guide-to-building-docker-images/
