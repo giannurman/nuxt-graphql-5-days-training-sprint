@@ -1,8 +1,18 @@
 <template>
   <mdb-container>
     <mdb-row>
-      <mdb-col col="6">Left column</mdb-col>
-      <mdb-col col="6">Right column</mdb-col>
+      <mdb-col xl="1" lg="2" md="4" sm="6" size="12">xl=1 lg=2 md=4 sm=6 xs=12</mdb-col>
+      <mdb-col xl="1" lg="2" md="4" sm="6" size="12">xl=1 lg=2 md=4 sm=6 xs=12</mdb-col>
+      <mdb-col xl="1" lg="2" md="4" sm="6" size="12">xl=1 lg=2 md=4 sm=6 xs=12</mdb-col>
+      <mdb-col xl="1" lg="2" md="4" sm="6" size="12">xl=1 lg=2 md=4 sm=6 xs=12</mdb-col>
+      <mdb-col xl="1" lg="2" md="4" sm="6" size="12">xl=1 lg=2 md=4 sm=6 xs=12</mdb-col>
+      <mdb-col xl="1" lg="2" md="4" sm="6" size="12">xl=1 lg=2 md=4 sm=6 xs=12</mdb-col>
+      <mdb-col xl="1" lg="2" md="4" sm="6" size="12">xl=1 lg=2 md=4 sm=6 xs=12</mdb-col>
+      <mdb-col xl="1" lg="2" md="4" sm="6" size="12">xl=1 lg=2 md=4 sm=6 xs=12</mdb-col>
+      <mdb-col xl="1" lg="2" md="4" sm="6" size="12">xl=1 lg=2 md=4 sm=6 xs=12</mdb-col>
+      <mdb-col xl="1" lg="2" md="4" sm="6" size="12">xl=1 lg=2 md=4 sm=6 xs=12</mdb-col>
+      <mdb-col xl="1" lg="2" md="4" sm="6" size="12">xl=1 lg=2 md=4 sm=6 xs=12</mdb-col>
+      <mdb-col xl="1" lg="2" md="4" sm="6" size="12">xl=1 lg=2 md=4 sm=6 xs=12</mdb-col>
     </mdb-row>
   </mdb-container>
 </template>
