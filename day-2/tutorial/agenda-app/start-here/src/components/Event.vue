@@ -3,7 +3,7 @@
     <div class="media mt-1">
       <h3 class="h3-responsive font-weight-bold mr-3 pt-0">{{time}}</h3>
       <div class="media-body mb-3 mb-lg-3">
-        <mdb-badge tag="a" color="danger-color" class="ml-2 float-right">-</mdb-badge>
+        <mdb-badge @click.native="onDelete" tag="a" color="danger-color" class="ml-2 float-right">-</mdb-badge>
         <h6 v-if="title" class="mt-0 font-weight-bold">{{title}}</h6>
         <hr class="hr-bold my-2">
 
@@ -49,6 +49,3 @@ export default {
   }
 };
 </script>
-
-<style scoped>
-</style>
