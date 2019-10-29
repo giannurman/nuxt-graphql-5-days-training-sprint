@@ -29,8 +29,9 @@
                     name="add"
                     prepend-icon="mdi-briefcase"
                     type="text"
+                    @input="handleInput($event)"
                   />
-                  <v-btn class="mx-2" fab dark color="indigo">
+                  <v-btn class="mx-2" fab dark color="indigo" @click.native="addEvent">
                     <v-icon dark>mdi-plus</v-icon>
                   </v-btn>
                 </v-form>
@@ -41,7 +42,7 @@
                     </v-list-item-content>
 
                     <v-list-item-action>
-                      <v-btn icon>
+                      <v-btn icon @click.native="handleDelete">
                         <v-icon color="grey lighten-1">mdi-delete</v-icon>
                       </v-btn>
                     </v-list-item-action>
@@ -80,8 +81,8 @@
       handleDelete(eventIndex) {
         this.todos.splice(eventIndex, 1);
       },
-      handleInput(val, type) {
-        this.newTodo[type] = val;
+      handleInput(val) {
+        this.newTodo = val;
       },
       addEvent() {
         this.todos.push({
