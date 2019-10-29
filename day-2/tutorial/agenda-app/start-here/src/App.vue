@@ -15,7 +15,7 @@
         />
         <mdb-row>
           <mdb-col xl="3" md="6" class="mx-auto text-center">
-            <mdb-btn color="info">Add Event</mdb-btn>
+            <mdb-btn color="info" @click.native="modal = true">Add Event</mdb-btn>
           </mdb-col>
         </mdb-row>
       </mdb-col>
@@ -46,11 +46,32 @@
         </p>
       </mdb-col>
     </mdb-row>
+
+    <mdb-modal v-if="modal" @close="modal = false">
+      <mdb-modal-header>
+        <mdb-modal-title tag="h4" class="w-100 text-center font-weight-bold">Add new event</mdb-modal-title>
+      </mdb-modal-header>
+      <mdb-modal-body>Modal body</mdb-modal-body>
+      <mdb-modal-footer class="justify-content-center">
+        <mdb-btn color="info">Add</mdb-btn>
+      </mdb-modal-footer>
+    </mdb-modal>
   </mdb-container>
 </template>
 
 <script>
-import { mdbContainer, mdbRow, mdbCol, mdbIcon, mdbBtn, } from "mdbvue";
+import {
+  mdbContainer,
+  mdbRow,
+  mdbCol,
+  mdbIcon,
+  mdbBtn,
+  mdbModal,
+  mdbModalHeader,
+  mdbModalTitle,
+  mdbModalBody,
+  mdbModalFooter
+} from "mdbvue";
 import Event from "@/components/Event";
 export default {
   name: "App",
@@ -58,9 +79,14 @@ export default {
     mdbContainer,
     mdbRow,
     mdbCol,
-    Event,
     mdbIcon,
     mdbBtn,
+    mdbModal,
+    mdbModalHeader,
+    mdbModalTitle,
+    mdbModalBody,
+    mdbModalFooter,
+    Event
   },
   data() {
     return {
@@ -86,7 +112,8 @@ export default {
           location: "Canteen",
           description: "Project evalutation"
         }
-      ]
+      ],
+      modal: false
     };
   },
   methods: {
