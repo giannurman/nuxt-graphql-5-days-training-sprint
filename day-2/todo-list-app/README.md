@@ -25,5 +25,14 @@ npm run test
 npm run lint
 ```
 
+### Fix not showing icon
+```
+npm install --save material-design-icons-iconfont
+```
+then import in in the main.js file
+```
+import 'material-design-icons-iconfont/dist/material-design-icons.css'
+```
+
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
