@@ -24,16 +24,22 @@
               </v-toolbar>
               <v-card-text>
                 <v-form>
-                  <v-text-field
-                    label="Add Todo"
-                    name="add"
-                    prepend-icon="mdi-briefcase"
-                    type="text"
-                    @input="handleInput($event)"
-                  />
-                  <v-btn class="mx-2" fab dark color="indigo" @click.native="addEvent">
-                    <v-icon dark>mdi-plus</v-icon>
-                  </v-btn>
+                  <v-row no-gutters>
+                    <v-col cols="10">
+                      <v-text-field
+                        label="Add Todo"
+                        name="add"
+                        prepend-icon="mdi-briefcase"
+                        type="text"
+                        @input="handleInput($event)"
+                      />
+                    </v-col>
+                    <v-col cols="2">
+                      <v-btn fab dark color="indigo" @click.native="addEvent" right absolute>
+                        <v-icon dark>mdi-plus</v-icon>
+                      </v-btn>
+                    </v-col>
+                  </v-row>                 
                 </v-form>
                 <TodoItem 
                   v-for="(item, index) in todos" 

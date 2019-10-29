@@ -1,17 +1,17 @@
 <template>
-  <v-list-item>
-    <v-list-item-content>
+  <div>
+    <v-list-item>
       <v-list-item-content>
         <v-list-item-title>{{ todo }}</v-list-item-title>
       </v-list-item-content>
-
       <v-list-item-action>
         <v-btn icon @click.native="onDelete">
           <v-icon color="grey lighten-1">mdi-delete</v-icon>
         </v-btn>
       </v-list-item-action>
-    </v-list-item-content>
-  </v-list-item>
+    </v-list-item>
+    <v-divider/>
+  </div>
 </template>
 
 <script>
