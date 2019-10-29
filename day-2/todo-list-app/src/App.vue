@@ -20,59 +20,34 @@
                 dark
                 flat
               >
-                <v-toolbar-title>Login form</v-toolbar-title>
-                <v-spacer />
-                <v-tooltip bottom>
-                  <template v-slot:activator="{ on }">
-                    <v-btn
-                      :href="source"
-                      icon
-                      large
-                      target="_blank"
-                      v-on="on"
-                    >
-                      <v-icon>mdi-code-tags</v-icon>
-                    </v-btn>
-                  </template>
-                  <span>Source</span>
-                </v-tooltip>
-                <v-tooltip right>
-                  <template v-slot:activator="{ on }">
-                    <v-btn
-                      icon
-                      large
-                      href="https://codepen.io/johnjleider/pen/pMvGQO"
-                      target="_blank"
-                      v-on="on"
-                    >
-                      <v-icon>mdi-codepen</v-icon>
-                    </v-btn>
-                  </template>
-                  <span>Codepen</span>
-                </v-tooltip>
+                <v-toolbar-title>Todo App</v-toolbar-title>
               </v-toolbar>
               <v-card-text>
                 <v-form>
                   <v-text-field
-                    label="Login"
-                    name="login"
-                    prepend-icon="person"
+                    label="Add Todo"
+                    name="add"
+                    prepend-icon="mdi-briefcase"
                     type="text"
                   />
-
-                  <v-text-field
-                    id="password"
-                    label="Password"
-                    name="password"
-                    prepend-icon="lock"
-                    type="password"
-                  />
+                  <v-btn class="mx-2" fab dark color="indigo">
+                    <v-icon dark>mdi-plus</v-icon>
+                  </v-btn>
                 </v-form>
+                <v-list-item v-for="(item, index) in todos" :key="index">
+                  <v-list-item-content>
+                    <v-list-item-content>
+                      <v-list-item-title>{{ item.todo }}</v-list-item-title>
+                    </v-list-item-content>
+
+                    <v-list-item-action>
+                      <v-btn icon>
+                        <v-icon color="grey lighten-1">mdi-delete</v-icon>
+                      </v-btn>
+                    </v-list-item-action>
+                  </v-list-item-content>
+                </v-list-item>
               </v-card-text>
-              <v-card-actions>
-                <v-spacer />
-                <v-btn color="primary">Login</v-btn>
-              </v-card-actions>
             </v-card>
           </v-col>
         </v-row>
@@ -87,5 +62,32 @@
     props: {
       source: String,
     },
+    data() {
+      return {
+        todos: [
+          {
+            todo: "Play"
+          },
+          {
+            todo: "Debug"
+          }
+        ],
+        modal: false,
+        newTodo: ""
+      }
+    },
+    methods: {
+      handleDelete(eventIndex) {
+        this.todos.splice(eventIndex, 1);
+      },
+      handleInput(val, type) {
+        this.newTodo[type] = val;
+      },
+      addEvent() {
+        this.todos.push({
+          todo: this.newTodo
+        });
+      }
+    }
   }
 </script>
