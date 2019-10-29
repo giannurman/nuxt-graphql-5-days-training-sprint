@@ -35,19 +35,13 @@
                     <v-icon dark>mdi-plus</v-icon>
                   </v-btn>
                 </v-form>
-                <v-list-item v-for="(item, index) in todos" :key="index">
-                  <v-list-item-content>
-                    <v-list-item-content>
-                      <v-list-item-title>{{ item.todo }}</v-list-item-title>
-                    </v-list-item-content>
-
-                    <v-list-item-action>
-                      <v-btn icon @click.native="handleDelete">
-                        <v-icon color="grey lighten-1">mdi-delete</v-icon>
-                      </v-btn>
-                    </v-list-item-action>
-                  </v-list-item-content>
-                </v-list-item>
+                <TodoItem 
+                  v-for="(item, index) in todos" 
+                  :key="index"
+                  :index="index"
+                  :todo="item.todo"
+                  @delete="handleDelete"
+                />
               </v-card-text>
             </v-card>
           </v-col>
@@ -58,8 +52,13 @@
 </template>
 
 <script>
+  import TodoItem from "@/components/TodoItem"
+
   export default {
     name: "App",
+    components: {
+      TodoItem
+    },
     props: {
       source: String,
     },
