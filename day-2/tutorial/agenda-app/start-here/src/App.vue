@@ -8,7 +8,7 @@
           :time="event.time"
           :title="event.title"
           :location="event.location"
-          :description="event.description",
+          :description="event.description"
           :key="index"
         />
       </mdb-col>
