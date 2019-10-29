@@ -1,23 +1,27 @@
 <template>
-  <div class="app">
-    <h2>I am App (main component)</h2>
-    <HelloWorld/>
-  </div>
+  <mdb-container>
+    <mdb-row>
+      <mdb-col col="6">Left column</mdb-col>
+      <mdb-col col="6">Right column</mdb-col>
+    </mdb-row>
+  </mdb-container>
 </template>
 
 <script>
+import { mdbContainer, mdbRow, mdbCol } from "mdbvue";
 export default {
-  name: "App"
+  name: "App",
+  components: {
+    mdbContainer,
+    mdbRow,
+    mdbCol
+  }
 };
 </script>
 
 <style>
-.app {
-  margin: 0 auto;
-  font-family: sans-serif;
-  background-color: #ccf7e2;
-  padding: 10px;
-  border-radius: 5px;
-  max-width: 500px;
+div[class^="col"],
+div[class*=" col"] {
+  border: 1px dotted black;
 }
 </style>
