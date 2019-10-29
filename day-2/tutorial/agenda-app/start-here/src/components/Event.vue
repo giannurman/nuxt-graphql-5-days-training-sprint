@@ -9,19 +9,22 @@
 <script>
 export default {
   name: "Event",
-  props: {
-    time: {
-      type: String
-    },
-    title: {
-      type: String
-    },
-    location: {
-      type: String
-    },
-    description: {
-      type: String
-    }
+    props: {
+      index: {
+        type: Number
+      },
+      time: {
+        type: String
+      },
+      title: {
+        type: String
+      },
+      location: {
+        type: String
+      },
+      description: {
+        type: String
+      }
   },
 };
 </script>
