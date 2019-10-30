@@ -1,0 +1,21 @@
+{
+  "name": "12-restful-apis",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test:get": "curl -i -H \"Accept: application/json\" -H \"Content-Type: application/json\" -X GET localhost:3000/movies/101",
+    "test:post": "curl -X POST --data \"name = Toy%20story&year = 1995&rating = 8.5\" http://localhost:3000/movies",
+    "test:put": "curl -X PUT --data \"name = Toy%20story&year = 1995&rating = 8.5\" http://localhost:3000/movies/101",
+    "dev": "nodemon index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cookie-parser": "^1.4.4",
+    "express": "^4.17.1",
+    "multer": "^1.4.2"
+  }
+}
