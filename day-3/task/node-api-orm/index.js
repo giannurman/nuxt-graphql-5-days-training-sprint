@@ -1,5 +1,4 @@
 require('dotenv').config()
-const http = require('http')
 const express = require('express')
 const bodyParser = require('body-parser')
 
@@ -22,19 +21,56 @@ app.get('/', (request, response) => {
 })
 
 app.get('/users', (request, response) => {
-  response.json({info: 'GET:Users'})
+  models.User.findAll().then(users => {
+    response.status(200).json(users)
+  })
 })
 app.get('/users/:id', (request, response) => {
-  response.json({info: 'GET:Users/Id'})
+  const id = parseInt(request.params.id)
+
+  models.User.findOne({
+    where: {
+      id: id
+    }
+  }).then(user => {
+    response.status(200).json(user)
+  })
 })
 app.post('/users', (request, response) => {
-  response.json({info: 'POST:Users'})
+  const { name, email } = request.body
+
+  models.User.create({
+    name: name,
+    email, email
+  }).then(user => {
+    response.status(201).json(user)
+  })
 })
 app.put('/users/:id', (request, response) => {
-  response.json({info: 'PUT:Users/Id'})
+  const id = parseInt(request.params.id)
+  const { name, email } = request.body
+
+  models.User.update({
+    name: name,
+    email: email
+  }, {
+    where: {
+      id: id
+    }
+  }).then((ids) => {
+    response.status(200).send(`User deleted with ID: ${ids}`)
+  })
 })
 app.delete('/users/:id', (request, response) => {
-  response.json({info: 'DELETE:Users/Id'})
+  const id = parseInt(request.params.id)
+
+  models.User.destroy({
+    where: {
+      id: id
+    }
+  }).then((id) => {
+    response.status(200).send(`User deleted with ID: ${id}`)
+  })
 })
 
 const eraseDatabaseOnSync = true;
