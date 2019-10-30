@@ -1,0 +1,20 @@
+{
+  "name": "node-api-postgres",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test:post": "curl --data \"name=Elaine&email=elaine@example.com\" http://localhost:3000/users",
+    "test:put": "curl -X PUT -d \"name=Kramer\" -d \"email=kramer@example.com\" http://localhost:3000/users/1",
+    "test:delete": "curl -X \"DELETE\" http://localhost:3000/users/1",
+    "dev": "nodemon index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "pg": "^7.12.1"
+  }
+}
