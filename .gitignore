@@ -19,3 +19,8 @@
 /day-4/tutorial/tutorialspoint/2-example/node_modules
 /day-4/tutorial/tutorialspoint/3-schema/node_modules
 /day-4/tutorial/tutorialspoint/4-resolver/node_modules
+/day-4/tutorial/tutorialspoint/5-query/node_modules
+/day-4/tutorial/tutorialspoint/5-query-with-custom-field/node_modules
+/day-4/tutorial/tutorialspoint/6-nested-query/node_modules
+/day-4/tutorial/tutorialspoint/7-query-variable/node_modules
+/day-4/tutorial/tutorialspoint/8-query-variable-with-enum/node_modules
