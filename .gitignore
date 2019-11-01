@@ -38,3 +38,5 @@
 /day-4/tutorial/graphql-server-with-apollo-express/.env
 /day-5/tutorial/vue-graphql/node_modules
 /day-5/tutorial/vue-graphql/config
+/day-5/task/server/node_modules
+/day-5/task/server/config/config.json
