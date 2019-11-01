@@ -6,7 +6,7 @@
         <b-link href="#/add-Book">(Add Book)</b-link>
       </h2>
       <b-table striped hover :items="books" :fields="fields">
-        <template slot="actions" scope="row">
+        <template v-slot:cell(actions)="row">
           <b-btn size="sm" @click.stop="details(row.item)">Details</b-btn>
         </template>
       </b-table>
@@ -38,11 +38,17 @@
   },
   data() {
     return {
-      fields: {
-        title: { label: "Title", sortable: true, class: "text-left" },
-        author: { label: "Author", sortable: true, class: "text-left" },
-        actions: { label: "Action", class: "text-center" }
-      },
+      fields: [
+        {
+          title: { label: "Title", sortable: true, class: "text-left" }
+        },
+        {
+          author: { label: "Author", sortable: true, class: "text-left" }
+        },
+        {
+          actions: { label: "Action", class: "text-center" }
+        }
+      ],
       books: []
     };
   },
