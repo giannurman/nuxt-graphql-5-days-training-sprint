@@ -103,9 +103,9 @@ Reference : [Setup PostgreSQL with Sequelize in Express](https://www.robinwieruc
 
 **References**
 
-- [ ] have followed the [GraphQL tutorial](https://www.tutorialspoint.com/graphql/index.htm)
-- [ ] have followed [GraphQL and Express sample app tutorial](https://medium.com/codingthesmartway-com-blog/creating-a-graphql-server-with-node-js-and-express-f6dddc5320e1)
-- [ ] have followed [GraphQL w/ Apollo Server tutorial](https://www.robinwieruch.de/graphql-apollo-server-tutorial)
+- [x] have followed the [GraphQL tutorial](https://www.tutorialspoint.com/graphql/index.htm)
+- [x] have followed [GraphQL and Express sample app tutorial](https://medium.com/codingthesmartway-com-blog/creating-a-graphql-server-with-node-js-and-express-f6dddc5320e1)
+- [x] have followed [GraphQL w/ Apollo Server tutorial](https://www.robinwieruch.de/graphql-apollo-server-tutorial)
 
 **Task**
 
@@ -121,9 +121,9 @@ Additional reference :
  
 **References**
 
-- [ ] have read [NuxtJS guide](https://nuxtjs.org/guide/)
-- [ ] have followed [NuxtJS sample app tutorial]()
-- [ ] have followed [NuxtJS + GraphQL + Apollo tutorial](https://www.djamware.com/post/5cdc0ba280aca754f7a9d1f4/node-express-postgresql-vue-2-and-graphql-crud-web-app)
+- [x] have read [NuxtJS guide](https://nuxtjs.org/guide/)
+- [x] have followed [NuxtJS sample app tutorial]()
+- [x] have followed [NuxtJS + GraphQL + Apollo tutorial](https://www.djamware.com/post/5cdc0ba280aca754f7a9d1f4/node-express-postgresql-vue-2-and-graphql-crud-web-app)
  
  
 **Task**
