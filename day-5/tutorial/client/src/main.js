@@ -4,6 +4,9 @@ import ApolloClient from "apollo-boost";
 import VueApollo from "vue-apollo";
 import VueRouter from 'vue-router'
 import router from './router'
+import BootstrapVue from 'bootstrap-vue'
+import 'bootstrap/dist/css/bootstrap.css'
+import 'bootstrap-vue/dist/bootstrap-vue.css'
 
 Vue.config.productionTip = false
 
@@ -16,7 +19,8 @@ const apolloProvider = new VueApollo({
 });
 
 Vue.use(VueApollo);
-Vue.use(VueRouter)
+Vue.use(VueRouter);
+Vue.use(BootstrapVue);
 
 new Vue({
   apolloProvider,
