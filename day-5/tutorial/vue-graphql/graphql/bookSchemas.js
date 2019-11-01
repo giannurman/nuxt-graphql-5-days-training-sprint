@@ -67,11 +67,11 @@ var queryType = new GraphQLObjectType({
         args: {
           id: {
             name: 'id',
-            type: GraphQLString
+            type: GraphQLInt
           }
         },
         resolve: function (root, params) {
-          const bookDetails = BookModel.findByPk(params.id).exec()
+          const bookDetails = BookModel.findByPk(params.id)
           if (!bookDetails) {
             throw new Error('Error')
           }
