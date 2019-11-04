@@ -109,7 +109,7 @@ Reference : [Setup PostgreSQL with Sequelize in Express](https://www.robinwieruc
 
 **Task**
 
-- [ ] create GraphQL mutation & queries for to-do list app on day 2
+- [x] create GraphQL mutation & queries for to-do list app on day 2
 
 Additional reference :
 
