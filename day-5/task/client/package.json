@@ -12,6 +12,7 @@
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore ."
   },
   "dependencies": {
+    "@nuxtjs/apollo": "^4.0.0-rc17",
     "@nuxtjs/axios": "^5.3.6",
     "apollo-boost": "^0.4.4",
     "graphql": "^14.5.8",

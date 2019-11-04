@@ -35,10 +35,10 @@
                   </v-row>
                 </v-form>
                 <TodoItem
-                  v-for="(item, index) in todos"
-                  :key="index"
-                  :index="index"
-                  :todo="item.todo"
+                  v-for="item in todos"
+                  :key="item.id"
+                  :index="item.id"
+                  :todo="item.note"
                   @delete="handleDelete"
                 />
               </v-card-text>
@@ -51,40 +51,92 @@
 </template>
 
 <script>
-import TodoItem from '~/components/TodoItem.vue'
+import gql from 'graphql-tag'
+import TodoItem from '@/components/TodoItem'
+
+const GET_TODOS = gql`
+  {
+    todos {
+      id
+      note
+    }
+  }
+`
+
+const DELETE_TODO = gql`
+  mutation removeTodo($id: Int!) {
+    removeTodo(id: $id) {
+      id
+    }
+  }
+`
+
+const ADD_TODO = gql`
+  mutation addTodo($note: String!) {
+    addTodo(note: $note) {
+      id
+      note
+    }
+  }
+`
 
 export default {
+  name: 'App',
   components: {
     TodoItem
   },
   props: {
     source: String
   },
+  apollo: {
+    todos: {
+      query: GET_TODOS,
+      pollInterval: 300
+    }
+  },
   data() {
     return {
-      todos: [
-        {
-          todo: 'Play'
-        },
-        {
-          todo: 'Debug'
-        }
-      ],
+      todos: [],
       modal: false,
       newTodo: ''
     }
   },
   methods: {
     handleDelete(eventIndex) {
-      this.todos.splice(eventIndex, 1)
+      const id = eventIndex
+      this.$apollo
+        .mutate({
+          mutation: DELETE_TODO,
+          variables: {
+            id
+          }
+        })
+        .then((data) => {
+          console.log(data)
+        })
+        .catch((error) => {
+          console.error(error)
+        })
     },
     handleInput(val) {
       this.newTodo = val
     },
-    addEvent() {
-      this.todos.push({
-        todo: this.newTodo
-      })
+    addEvent(evt) {
+      evt.preventDefault()
+
+      this.$apollo
+        .mutate({
+          mutation: ADD_TODO,
+          variables: {
+            note: this.newTodo
+          }
+        })
+        .then((data) => {
+          console.log(data)
+        })
+        .catch((error) => {
+          console.error(error)
+        })
     }
   }
 }
