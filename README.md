@@ -128,7 +128,7 @@ Additional reference :
  
 **Task**
 
-- [ ] create the previous simple to-do list app using :
+- [x] create the previous simple to-do list app using :
 	- NuxtJS
 	- GraphQL
 	- PostgreSQL
