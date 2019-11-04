@@ -55,11 +55,11 @@ var queryType = new GraphQLObjectType({
         args: {
           id: {
             name: 'id',
-            type: GraphQLString
+            type: GraphQLInt
           }
         },
         resolve: function (root, params) {
-          const todoDetails = TodoModel.findByPk(params.id).exec()
+          const todoDetails = TodoModel.findByPk(params.id)
           if (!todoDetails) {
             throw new Error('Error')
           }
@@ -110,7 +110,7 @@ var mutation = new GraphQLObjectType({
             }
             return todo
               .update({
-                isbn: params.note || todo.note
+                note: params.note || todo.note
               })
               .then(() => { return todo; })
               .catch((error) => { throw new Error(error); });
