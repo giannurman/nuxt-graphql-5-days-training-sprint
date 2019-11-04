@@ -114,7 +114,6 @@
     },
     methods: {
       handleDelete(eventIndex) {
-        // this.todos.splice(eventIndex, 1);
         const id = eventIndex
         this.$apollo
           .mutate({
@@ -145,7 +144,6 @@
           })
           .then(data => {
             console.log(data);
-            // router.push({ name: "BookList" });
           })
           .catch(error => {
             console.error(error);
